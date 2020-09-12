@@ -22,7 +22,7 @@ const firmSchema = new mongoose.Schema({
         required: true,
     },
     loginCount: {
-        type: Date,
+        type: Number,
         required: true,
 
     },

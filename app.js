@@ -1,0 +1,22 @@
+const express = require("express")
+const mongoose = require("mongoose")
+
+const url= 'mongodb://localhost/EnquiresDB' 
+const app = express()
+app.use(express.json())
+mongoose.connect(url,{useNewUrlParser:true})
+const con = mongoose.connection
+con.on('open',()=>{
+    console.log("Connected...");
+})
+
+const registrationRouter = require('./routes/firm')
+app.use('/firms',registrationRouter)
+const enquiryRouter = require('./routes/enquiry')
+app.use('/enquires',enquiryRouter)
+const quotationRouter = require('./routes/quotation')
+app.use('/quotations',quotationRouter)
+
+app.listen(9000,()=>{
+    console.log("Server Started and listening on 9000")
+})
