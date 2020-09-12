@@ -6,8 +6,8 @@ const router=express.Router()
 
 router.get('/',async (req,res)=>{
     try{
-        const enquires= await Enquiry.find()
-        res.json(enquires)
+        const enquiries= await Enquiry.find()
+        res.json(enquiries)
     }catch(err){
         res.send('Error '+err)
     }
