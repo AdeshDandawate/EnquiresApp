@@ -31,7 +31,7 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-router.patch('/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => { 
     try {
         const firm = await Firm.findById(req.params.id)
         firm.firmName = req.body.firmName
