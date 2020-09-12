@@ -1,22 +1,22 @@
 const express = require("express")
 const mongoose = require("mongoose")
 
-const url= 'mongodb://localhost/EnquiriesDB' 
+const url = 'mongodb://localhost/EnquiriesDB'
 const app = express()
 app.use(express.json())
-mongoose.connect(url,{useNewUrlParser:true})
+mongoose.connect(url, { useNewUrlParser: true })
 const con = mongoose.connection
-con.on('open',()=>{
+con.on('open', () => {
     console.log("Connected...");
 })
 
 const registrationRouter = require('./routes/firm')
-app.use('/firms',registrationRouter)
+app.use('/firms', registrationRouter)
 const enquiryRouter = require('./routes/enquiry')
-app.use('/enquiries',enquiryRouter)
+app.use('/enquiries', enquiryRouter)
 const quotationRouter = require('./routes/quotation')
-app.use('/quotations',quotationRouter)
+app.use('/quotations', quotationRouter)
 
-app.listen(9000,()=>{
+app.listen(9000, () => {
     console.log("Server Started and listening on 9000")
 })
