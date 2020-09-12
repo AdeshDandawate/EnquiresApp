@@ -34,7 +34,7 @@ router.delete('/:id',async (req,res)=>{
 router.patch('/:id',async (req,res)=>{
     try{
         const enquiry= await Enquiry.findById(req.params.id)
-        enquiry.buyerFirmId=req.body.buyerFirmId
+        enquiry.grade=req.body.grade
         const e1=await enquiry.save()
         res.json(e1)
     }catch(err){

@@ -34,7 +34,7 @@ router.delete('/:id',async (req,res)=>{
 router.patch('/:id',async (req,res)=>{
     try{
         const quotation= await Quotation.findById(req.params.id)
-        quotation.sellerFirmId=req.body.sellerFirmId
+        quotation.rate=req.body.rate
         const e1=await quotation.save()
         res.json(e1)
     }catch(err){
