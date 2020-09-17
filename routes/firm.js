@@ -55,8 +55,8 @@ router.post('/', async (req, res) => {
     })
     try {
         const a1 = await firm.save()
-        console.log(a1._id)
-        res.send(a1.id)
+        console.log({ "id": a1._id })
+        res.send({ "id": a1._id })
     } catch (err) {
         res.send('Error ' + err)
     }
