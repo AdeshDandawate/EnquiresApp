@@ -1,8 +1,13 @@
 const express = require("express")
 const mongoose = require("mongoose")
+const cors = require("cors")
 
 const url = 'mongodb://localhost/EnquiriesDB'
+
 const app = express()
+app.use(cors({
+    origin: '*'
+}))
 app.use(express.json())
 mongoose.connect(url, { useNewUrlParser: true })
 const con = mongoose.connection

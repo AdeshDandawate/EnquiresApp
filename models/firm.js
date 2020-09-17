@@ -11,7 +11,6 @@ const firmSchema = new mongoose.Schema({
     },
     groupCode: {
         type: Number,
-        required: true,
     },
     telecomNumber: {
         type: Number,
@@ -23,8 +22,6 @@ const firmSchema = new mongoose.Schema({
     },
     loginCount: {
         type: Number,
-        required: true,
-
     },
     isActive: {
         type: Boolean,
