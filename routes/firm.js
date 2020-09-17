@@ -43,6 +43,7 @@ router.patch('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+    console.log("*********************************")
     const firm = new Firm({
         firmName: req.body.firmName,
         cellNumber: req.body.cellNumber,
@@ -54,7 +55,8 @@ router.post('/', async (req, res) => {
     })
     try {
         const a1 = await firm.save()
-        res.json(a1)
+        console.log(a1._id)
+        res.send(a1.id)
     } catch (err) {
         res.send('Error ' + err)
     }
