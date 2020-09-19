@@ -17,7 +17,7 @@ con.on('open', () => {
 })
 
 const registrationRouter = require('./routes/firm')
-app.use('/firms', registrationRouter)
+app.use('/home', registrationRouter)
 const enquiryRouter = require('./routes/enquiry')
 app.use('/enquiries', enquiryRouter)
 const quotationRouter = require('./routes/quotation')
