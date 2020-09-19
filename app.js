@@ -2,7 +2,8 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 
-const url = 'mongodb://localhost/EnquiriesDB'
+//onst url = 'mongodb://localhost/EnquiriesDB'
+const url = process.env.CUSTOMCONNSTR_AzureMongoConnection
 
 const app = express()
 app.use(cors({

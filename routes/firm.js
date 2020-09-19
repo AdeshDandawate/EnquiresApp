@@ -7,7 +7,10 @@ const router = express.Router()
 router.get('/', async (req, res) => {
     try {
         const firms = await Firm.find()
-        res.json(firms)
+        if (res == "" || res == null)
+            res.json(firms)
+        else
+            res.send("Welcome To BizTrack")
     } catch (err) {
         res.send('Error ' + err)
     }
