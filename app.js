@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 
 //onst url = 'mongodb://localhost/EnquiriesDB'
-const url = process.env.CUSTOMCONNSTR_AzureMongoConnection
+const url = 'mongodb://biztrack-mongodb:m1vKtk7LoEmrGxFxcaqcJkduzwska3OWtW2UtGvtWa5JBj1SsYrgoreEY3lh7DCbKnGO1F5GFr7oIe8rmZTShQ==@biztrack-mongodb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@biztrack-mongodb@'
 
 const app = express()
 app.use(cors({
