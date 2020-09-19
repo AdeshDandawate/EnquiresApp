@@ -23,6 +23,6 @@ app.use('/enquiries', enquiryRouter)
 const quotationRouter = require('./routes/quotation')
 app.use('/quotations', quotationRouter)
 
-app.listen(9000, () => {
+app.listen(8080, () => {
     console.log("Server Started and listening on 9000")
 })
