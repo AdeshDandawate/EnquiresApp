@@ -1,9 +1,9 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-
-//const url = 'mongodb://localhost/EnquiriesDB'
-const url = 'mongodb://biztrack-mongodb:m1vKtk7LoEmrGxFxcaqcJkduzwska3OWtW2UtGvtWa5JBj1SsYrgoreEY3lh7DCbKnGO1F5GFr7oIe8rmZTShQ==@biztrack-mongodb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@biztrack-mongodb@'
+const jwt = require("Jsonwebtoken")
+const url = 'mongodb://localhost/EnquiriesDB'
+//const url = 'mongodb://biztrack-mongodb:m1vKtk7LoEmrGxFxcaqcJkduzwska3OWtW2UtGvtWa5JBj1SsYrgoreEY3lh7DCbKnGO1F5GFr7oIe8rmZTShQ==@biztrack-mongodb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@biztrack-mongodb@'
 
 const app = express()
 app.use(cors({
@@ -21,6 +21,7 @@ app.use('/firms', registrationRouter)
 const enquiryRouter = require('./routes/enquiry')
 app.use('/enquiries', enquiryRouter)
 const quotationRouter = require('./routes/quotation')
+const { JsonWebTokenError } = require("jsonwebtoken")
 app.use('/quotations', quotationRouter)
 
 app.listen(8080, () => {
